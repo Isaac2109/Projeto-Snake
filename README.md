@@ -1,2 +1,2 @@
 # my repository
- This is my repository, where i'm going to post my projects.
+ Este é um dos meus primeiros projetos, nele eu aprimorei um game "snake" básico com várias funcionalidades para melhorar o game.
