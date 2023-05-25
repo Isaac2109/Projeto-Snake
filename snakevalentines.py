@@ -33,8 +33,8 @@ bloco = pygame.Surface((10,10))
 bloco.fill((72,185,219))
 
 def on_grid_random():
-    x = random.randint(10,580) // 10 * 10
-    y = random.randint(40,580) // 10 * 10
+    x = random.randint(10,280) // 10 * 10
+    y = random.randint(40,280) // 10 * 10
     for barr in barreira:
         if (x,y) == (barr):
             on_grid_random()
@@ -63,23 +63,29 @@ def desenhar_melhor_pontuação(melhor_pontuação):
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
         screen.blit(text_melhor_pontuacao, (440,5))
 
-for t in range(270,220,-10):
-    barreira.append((450,t))
+# obstáculo do meio parte de cima
 
-for b in range(270,220,-10):
-    barreira.append((150,b))
+for t in range(90,140,10):
+    barreira.append((460,t))
 
-for h in range(150,460,10):
-    barreira.append((h,220))
+for b in range(90,140,10):
+    barreira.append((130,b))
 
-for u in range(320,370,10):
-    barreira.append((150,u))
+for h in range(140,470,10):
+    barreira.append((h,90))
 
-for p in range(320,370,10):
-    barreira.append((450,p))
+# obstaculo do meio parte de baixo
 
-for c in range(150,460,10):
-    barreira.append((c,370))
+for u in range(180,220,10):
+    barreira.append((130,u))
+
+for p in range(180,220,10):
+    barreira.append((460,p))
+
+for c in range(130,470,10):
+    barreira.append((c,220))
+
+# obstaculo de cima
 
 for i in range(0,280,10):
     barreira.append((i,30))
@@ -87,22 +93,28 @@ for i in range(0,280,10):
 for a in range(320,600,10):
     barreira.append((a,30))
 
-for x in range(30,280,10):
+# obstaculo lado esquerdo
+
+for x in range(30,140,10):
     barreira.append((0,x))
 
-for z in range(320,600,10):
+for z in range(180,300,10):
     barreira.append((0,z))
 
+# obstaculo de baixo
+
 for t in range(0,280,10):
-    barreira.append((t,590))
+    barreira.append((t,290))
 
 for j in range(320,600,10):
-    barreira.append((j,590))
+    barreira.append((j,290))
 
-for o in range(30,280,10):
+# obstaculo lado direito
+
+for o in range(30,140,10):
     barreira.append((590,o))
 
-for h in range(320,600,10):
+for h in range(180,300,10):
     barreira.append((590,h))
 
 clock = pygame.time.Clock()
