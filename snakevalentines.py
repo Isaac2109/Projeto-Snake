@@ -35,9 +35,7 @@ bloco.fill((72,185,219))
 def on_grid_random():
     x = random.randint(10,280) // 10 * 10
     y = random.randint(40,280) // 10 * 10
-    for barr in barreira:
-        if (x,y) == (barr):
-            on_grid_random()
+    print(x,y)
     return (x,y)
 
 apple_pos = on_grid_random()
@@ -51,14 +49,14 @@ def desenhar_pontuação(pontos):
     
 def desenhar_ultima_pontuação(ultima_pontuação):
     text_sua_pontuacao = font_text.render(f"Você fez {ultima_pontuação} pontos",1 ,(0, 200, 255))
-    screen.blit(text_sua_pontuacao, (195,230))
+    screen.blit(text_sua_pontuacao, (360,250))
 
 def desenhar_melhor_pontuação(melhor_pontuação):
     if tela_restart:
         text_melhor_pontuacao = font_text.render(f"Sua melhor pontuação foi {melhor_pontuação}",1 ,(0, 200, 255))
-        screen.blit(text_melhor_pontuacao, (150,270))
+        screen.blit(text_melhor_pontuacao, (290,300))
         text_reiniciar = font_text.render("Para reiniciar pressione espaço",1,(0,200,255))
-        screen.blit(text_reiniciar,(130,310))
+        screen.blit(text_reiniciar,(260,350))
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
         screen.blit(text_melhor_pontuacao, (840,5))
@@ -66,23 +64,29 @@ def desenhar_melhor_pontuação(melhor_pontuação):
 # obstáculo do meio parte de cima
 
 for t in range(90,140,10):
-    barreira.append((460,t))
+    barreira.append((860,t))
 
 for b in range(90,140,10):
     barreira.append((130,b))
 
-for h in range(140,470,10):
+for y in range(520,860,10):
+    barreira.append((y,90))
+
+for h in range(140,480,10):
     barreira.append((h,90))
 
 # obstaculo do meio parte de baixo
 
-for u in range(180,220,10):
+for u in range(180,230,10):
     barreira.append((130,u))
 
-for p in range(180,220,10):
-    barreira.append((460,p))
+for p in range(180,230,10):
+    barreira.append((860,p))
 
-for c in range(130,470,10):
+for b in range(520,860,10):
+    barreira.append((b,220))
+
+for c in range(140,480,10):
     barreira.append((c,220))
 
 # obstaculo de cima
@@ -146,6 +150,9 @@ while rodando:
                     tela_inicial = False
 
     if gamming:
+        for barr in barreira:
+            if collision(apple_pos,barr):
+                on_grid_random()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 rodando = False
@@ -198,13 +205,13 @@ while rodando:
         if my_direction == LEFT:
             snake[0] = (snake[0][0] - 10, snake[0][1])
         
-        if snake[0][0] > 600:
+        if snake[0][0] > 1000:
             my_direction = PARADO
-            snake[0] = (snake[0][0] - 610, snake[0][1])
+            snake[0] = (snake[0][0] - 1010, snake[0][1])
             my_direction = RIGHT
         if snake[0][0] < 0:
             my_direction = PARADO
-            snake[0] = (snake[0][0] + 600, snake[0][1])
+            snake[0] = (snake[0][0] + 1000, snake[0][1])
             my_direction = LEFT
         if snake[0][1] > 300:
             my_direction = PARADO
@@ -231,7 +238,7 @@ while rodando:
         snake = [[300,160], [310,160],[320,160]]
         apple_pos = on_grid_random()
         screen.fill((0,0,0))
-        screen.blit(text_perdeu,(220,190))
+        screen.blit(text_perdeu,(400,200))
         desenhar_ultima_pontuação(ultima_pontuação)
         desenhar_melhor_pontuação(melhor_pontuação)
         pygame.display.update()
