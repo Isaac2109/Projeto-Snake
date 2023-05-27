@@ -3,10 +3,10 @@ from pygame.locals import *
 from time import sleep
 
 pygame.init()
-screen = pygame.display.set_mode((600,600))
+screen = pygame.display.set_mode((1000,700))
 pygame.display.set_caption('Snake')
 pygame.font.init()
-font_text = pygame.font.SysFont('arial', 30)
+font_text = pygame.font.SysFont('arial', 40)
 font_pontos = pygame.font.SysFont('arial', 20)
 text_inicial = font_text.render("Para começar pressione espaço", 1, (0, 200, 255))
 text_perdeu = font_text.render("Você perdeu", 1, (0, 200, 255))
@@ -24,10 +24,10 @@ RIGHT = 1
 DOWN = 2
 LEFT = 3
 PARADO = 4
-barra_topo = pygame.Surface((600,30))
+barra_topo = pygame.Surface((1000,30))
 barra_topo.fill((0, 0, 0))
 snake_skin = pygame.Surface((10,10))
-snake_skin.fill((100,255,100),)
+snake_skin.fill((100,255,100))
 barreira = []
 bloco = pygame.Surface((10,10))
 bloco.fill((72,185,219))
@@ -61,7 +61,7 @@ def desenhar_melhor_pontuação(melhor_pontuação):
         screen.blit(text_reiniciar,(130,310))
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
-        screen.blit(text_melhor_pontuacao, (440,5))
+        screen.blit(text_melhor_pontuacao, (840,5))
 
 # obstáculo do meio parte de cima
 
@@ -87,10 +87,10 @@ for c in range(130,470,10):
 
 # obstaculo de cima
 
-for i in range(0,280,10):
+for i in range(0,480,10):
     barreira.append((i,30))
 
-for a in range(320,600,10):
+for a in range(520,1000,10):
     barreira.append((a,30))
 
 # obstaculo lado esquerdo
@@ -103,19 +103,26 @@ for z in range(180,300,10):
 
 # obstaculo de baixo
 
-for t in range(0,280,10):
+for t in range(0,480,10):
     barreira.append((t,290))
 
-for j in range(320,600,10):
+for j in range(520,1000,10):
     barreira.append((j,290))
 
 # obstaculo lado direito
 
 for o in range(30,140,10):
-    barreira.append((590,o))
+    barreira.append((990,o))
 
 for h in range(180,300,10):
-    barreira.append((590,h))
+    barreira.append((990,h))
+
+# Textos para minha namorada
+
+
+
+
+
 
 clock = pygame.time.Clock()
 while rodando:
@@ -123,9 +130,9 @@ while rodando:
 
     if tela_inicial:
         my_direction = LEFT
-        snake = [[300, 300], [310, 300],[320,300]]
+        snake = [[300,160], [310,160],[320,160]]
         screen.fill((0,0,0))
-        screen.blit(text_inicial,(130,250))
+        screen.blit(text_inicial,(280,320))
         pygame.display.update()
 
         for event in pygame.event.get():
@@ -199,13 +206,13 @@ while rodando:
             my_direction = PARADO
             snake[0] = (snake[0][0] + 600, snake[0][1])
             my_direction = LEFT
-        if snake[0][1] > 600:
+        if snake[0][1] > 300:
             my_direction = PARADO
-            snake[0] = (snake[0][0], snake[0][1] - 580)
+            snake[0] = (snake[0][0], snake[0][1] - 280)
             my_direction = DOWN
         if snake[0][1] < 30:
             my_direction = PARADO
-            snake[0] = (snake[0][0], snake[0][1] + 570)
+            snake[0] = (snake[0][0], snake[0][1] + 270)
             my_direction = UP
             
         screen.fill((3,6,82))
@@ -221,7 +228,7 @@ while rodando:
 
     if tela_restart:
         my_direction = LEFT
-        snake = [[300, 300], [310, 300],[320,300]]
+        snake = [[300,160], [310,160],[320,160]]
         apple_pos = on_grid_random()
         screen.fill((0,0,0))
         screen.blit(text_perdeu,(220,190))
