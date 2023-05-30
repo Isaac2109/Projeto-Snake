@@ -35,7 +35,6 @@ bloco.fill((72,185,219))
 def on_grid_random():
     x = random.randint(10,280) // 10 * 10
     y = random.randint(40,280) // 10 * 10
-    print(x,y)
     return (x,y)
 
 apple_pos = on_grid_random()
@@ -60,6 +59,31 @@ def desenhar_melhor_pontuação(melhor_pontuação):
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
         screen.blit(text_melhor_pontuacao, (840,5))
+
+def textos_romanticos(pontos):
+    texto_rom_1 = font_pontos.render("Esse é o nosso primeiro dia dos namorados",1,(255,0,0))
+    texto_rom_2 = font_pontos.render("E é a primeira vez que o dia dos namorados faz sentido pra mim",1,(255,0,0))
+    texto_rom_3 = font_pontos.render("Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.",1,(255,0,0))
+    texto_rom_4 = font_pontos.render('Amor é sério... (antes no lugar de "amor" era "pô", mas depois de uma conversa nossa alterei kkkkk)',1,(255,0,0))
+    texto_rom_5 = font_pontos.render("Eu te amo muito, me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras",1,(255,0,0))
+    texto_rom_6 = font_pontos.render("Mas eu acredito que a melhor maneira de demonstrar o amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda",1,(255,0,0))
+    texto_rom_7 = font_pontos.render("Eu acredito que o que prova realmente que você ama uma pessoa são as atitudes",1,(255,0,0))
+    texto_rom_8 = font_pontos.render("É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar ela quando  sempre que estiver em um momento difícil",1,(255,0,0))
+    texto_rom_9 = font_pontos.render("E eu quero muito fazer isso por você, cuidar de você, porque eu te amo.",1,(255,0,0))
+    texto_rom_10 = font_pontos.render("Hoje é o dia dos namorados e hoje fazem 49 dias que nós nos reencontramos",1,(255,0,0))
+    texto_rom_11 = font_pontos.render("E eu tenho certeza que esses já são os melhores dias da minha vida",1,(255,0,0))
+    texto_rom_12 = font_pontos.render("E eu quero que todos os dias que me restam sejam iguais a estes 49 dias ao seu lado",1,(255,0,0))
+    texto_rom_13 = font_pontos.render("Você é muito especial pra mim.",1,(255,0,0))
+    texto_rom_14 = font_pontos.render("Baixinha...",1,(255,0,0))
+    texto_rom_15 = font_pontos.render("Eu te amo, você é o amor da minha vida.",1,(255,0,0))
+    if pontos >= 1:
+        screen.blit(texto_rom_1, (300,300))
+    if pontos >= 2:
+        screen.blit(texto_rom_2, (200,320))
+    if pontos >= 3:
+        screen.blit(texto_rom_3, (100,340))
+    if pontos >= 4:
+        screen.blit(texto_rom_4, (10,360))
 
 # obstáculo do meio parte de cima
 
@@ -123,10 +147,21 @@ for h in range(180,300,10):
 
 # Textos para minha namorada
 
-
-
-
-
+# 1 Esse é o nosso primeiro dia dos namorados
+# 2 E é a primeira vez que o dia dos namorados faz sentido pra mim
+# 3 Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.
+# 4 Amor é sério... (antes no lugar de "amor" era "pô", mas depois de uma conversa nossa alterei kkkkk)
+# 5 Eu te amo muito, me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras
+# 6 Mas eu acredito que a melhor maneira de demonstrar o amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda
+# 7 Eu acredito que o que prova realmente que você ama uma pessoa são as atitudes
+# 8 É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar ela quando  sempre que estiver em um momento difícil
+# 9 E eu quero muito fazer isso por você, cuidar de você, porque eu te amo.
+# 10 Hoje é o dia dos namorados e hoje fazem 49 dias que nós nos reencontramos
+# 11 E eu tenho certeza que esses já são os melhores dias da minha vida
+# 12 E eu quero que todos os dias que me restam sejam iguais a estes 49 dias ao seu lado
+# 13 Você é muito especial pra mim.
+# 14 Baixinha...
+# 15 Eu te amo, você é o amor da minha vida.
 
 clock = pygame.time.Clock()
 while rodando:
@@ -152,7 +187,7 @@ while rodando:
     if gamming:
         for barr in barreira:
             if collision(apple_pos,barr):
-                on_grid_random()
+                apple_pos = on_grid_random()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 rodando = False
@@ -229,6 +264,7 @@ while rodando:
         for c in barreira:
             screen.blit(bloco, c)
         screen.blit(barra_topo,(0,0))
+        textos_romanticos(pontuação)
         desenhar_pontuação(pontuação)
         desenhar_melhor_pontuação(melhor_pontuação)
         pygame.display.update()
