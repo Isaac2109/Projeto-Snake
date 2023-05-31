@@ -64,26 +64,48 @@ def textos_romanticos(pontos):
     texto_rom_1 = font_pontos.render("Esse é o nosso primeiro dia dos namorados",1,(255,0,0))
     texto_rom_2 = font_pontos.render("E é a primeira vez que o dia dos namorados faz sentido pra mim",1,(255,0,0))
     texto_rom_3 = font_pontos.render("Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.",1,(255,0,0))
-    texto_rom_4 = font_pontos.render('Amor é sério... (antes no lugar de "amor" era "pô", mas depois de uma conversa nossa alterei kkkkk)',1,(255,0,0))
-    texto_rom_5 = font_pontos.render("Eu te amo muito, me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras",1,(255,0,0))
-    texto_rom_6 = font_pontos.render("Mas eu acredito que a melhor maneira de demonstrar o amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda",1,(255,0,0))
+    texto_rom_4 = font_pontos.render("Agora falando sério, eu te amo muito, muito, muito mesmo",1,(255,0,0))
+    texto_rom_5 = font_pontos.render("Me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras",1,(255,0,0))
+    texto_rom_6 = font_pontos.render("Mas eu acredito que a melhor maneira de demonstrar amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda",1,(255,0,0))
     texto_rom_7 = font_pontos.render("Eu acredito que o que prova realmente que você ama uma pessoa são as atitudes",1,(255,0,0))
-    texto_rom_8 = font_pontos.render("É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar ela quando  sempre que estiver em um momento difícil",1,(255,0,0))
+    texto_rom_8 = font_pontos.render("É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar sempre que ela estiver em um momento difícil",1,(255,0,0))
     texto_rom_9 = font_pontos.render("E eu quero muito fazer isso por você, cuidar de você, porque eu te amo.",1,(255,0,0))
     texto_rom_10 = font_pontos.render("Hoje é o dia dos namorados e hoje fazem 49 dias que nós nos reencontramos",1,(255,0,0))
     texto_rom_11 = font_pontos.render("E eu tenho certeza que esses já são os melhores dias da minha vida",1,(255,0,0))
     texto_rom_12 = font_pontos.render("E eu quero que todos os dias que me restam sejam iguais a estes 49 dias ao seu lado",1,(255,0,0))
     texto_rom_13 = font_pontos.render("Você é muito especial pra mim.",1,(255,0,0))
-    texto_rom_14 = font_pontos.render("Baixinha...",1,(255,0,0))
-    texto_rom_15 = font_pontos.render("Eu te amo, você é o amor da minha vida.",1,(255,0,0))
+    texto_rom_14 = font_pontos.render("Se eu pudesse colocar um áudio aqui colocaria, mas como não posso, vou só escrever mesmo",1,(255,0,0))
+    texto_rom_15 = font_text.render("BAIXINHA EU TE AMO VOCÊ É O AMOR DA MINHA VIDA.",1,(255,0,0))
     if pontos >= 1:
-        screen.blit(texto_rom_1, (300,300))
+        screen.blit(texto_rom_1, (350,300))
     if pontos >= 2:
-        screen.blit(texto_rom_2, (200,320))
+        screen.blit(texto_rom_2, (250,320))
     if pontos >= 3:
-        screen.blit(texto_rom_3, (100,340))
+        screen.blit(texto_rom_3, (120,340))
     if pontos >= 4:
-        screen.blit(texto_rom_4, (10,360))
+        screen.blit(texto_rom_4, (280,360))
+    if pontos >= 5:
+        screen.blit(texto_rom_5, (10,380))
+    if pontos >= 6:
+        screen.blit(texto_rom_6, (10,400))
+    if pontos >= 7:
+        screen.blit(texto_rom_7, (220,420))
+    if pontos >= 8:
+        screen.blit(texto_rom_8, (60,440))
+    if pontos >= 9:
+        screen.blit(texto_rom_9, (230,460))
+    if pontos >= 10:
+        screen.blit(texto_rom_10, (200,480))
+    if pontos >= 11:
+        screen.blit(texto_rom_11, (240,500))
+    if pontos >= 12:
+        screen.blit(texto_rom_12, (170,520))
+    if pontos >= 13:
+        screen.blit(texto_rom_13, (380,540))
+    if pontos >= 14:
+        screen.blit(texto_rom_14, (140,560))
+    if pontos >= 15:
+        screen.blit(texto_rom_15, (80,600))
 
 # obstáculo do meio parte de cima
 
