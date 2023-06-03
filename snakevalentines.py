@@ -16,7 +16,7 @@ rodando = True
 tela_inicial = True
 gamming = False
 tela_restart = False
-pontuação = 0
+pontuação = 15
 melhor_pontuação = 0
 ultima_pontuação = 0
 UP = 0
@@ -33,7 +33,7 @@ bloco = pygame.Surface((10,10))
 bloco.fill((72,185,219))
 
 def on_grid_random():
-    x = random.randint(10,280) // 10 * 10
+    x = random.randint(10,990) // 10 * 10
     y = random.randint(40,280) // 10 * 10
     return (x,y)
 
@@ -58,14 +58,14 @@ def desenhar_melhor_pontuação(melhor_pontuação):
         screen.blit(text_reiniciar,(260,350))
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
-        screen.blit(text_melhor_pontuacao, (840,5))
+        screen.blit(text_melhor_pontuacao, (835,5))
 
 def textos_romanticos(pontos):
     texto_rom_1 = font_pontos.render("Esse é o nosso primeiro dia dos namorados",1,(255,0,0))
     texto_rom_2 = font_pontos.render("E é a primeira vez que o dia dos namorados faz sentido pra mim",1,(255,0,0))
     texto_rom_3 = font_pontos.render("Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.",1,(255,0,0))
     texto_rom_4 = font_pontos.render("Agora falando sério, eu te amo muito, muito, muito mesmo",1,(255,0,0))
-    texto_rom_5 = font_pontos.render("Me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras",1,(255,0,0))
+    texto_rom_5 = font_pontos.render("Me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso)",1,(255,0,0))
     texto_rom_6 = font_pontos.render("Mas eu acredito que a melhor maneira de demonstrar amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda",1,(255,0,0))
     texto_rom_7 = font_pontos.render("Eu acredito que o que prova realmente que você ama uma pessoa são as atitudes",1,(255,0,0))
     texto_rom_8 = font_pontos.render("É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar sempre que ela estiver em um momento difícil",1,(255,0,0))
@@ -74,8 +74,10 @@ def textos_romanticos(pontos):
     texto_rom_11 = font_pontos.render("E eu tenho certeza que esses já são os melhores dias da minha vida",1,(255,0,0))
     texto_rom_12 = font_pontos.render("E eu quero que todos os dias que me restam sejam iguais a estes 49 dias ao seu lado",1,(255,0,0))
     texto_rom_13 = font_pontos.render("Você é muito especial pra mim.",1,(255,0,0))
-    texto_rom_14 = font_pontos.render("Se eu pudesse colocar um áudio aqui colocaria, mas como não posso, vou só escrever mesmo",1,(255,0,0))
-    texto_rom_15 = font_text.render("BAIXINHA EU TE AMO VOCÊ É O AMOR DA MINHA VIDA.",1,(255,0,0))
+    texto_rom_14 = font_pontos.render("Por enquanto, a distância que nos separa não permite que eu fale as próximas frases olhando nos seus olhos",1,(255,0,0))
+    texto_rom_17 = font_pontos.render("Então tenho que me contentar em só escrever elas aqui",1,(255,0,0))
+    texto_rom_15 = font_text.render("BAIXINHA EU TE AMO",0,(255,0,0))
+    texto_rom_16 = font_text.render("VOCÊ É O AMOR DA MINHA VIDA.",1,(255,0,0))
     if pontos >= 1:
         screen.blit(texto_rom_1, (350,300))
     if pontos >= 2:
@@ -85,7 +87,7 @@ def textos_romanticos(pontos):
     if pontos >= 4:
         screen.blit(texto_rom_4, (280,360))
     if pontos >= 5:
-        screen.blit(texto_rom_5, (10,380))
+        screen.blit(texto_rom_5, (170,380))
     if pontos >= 6:
         screen.blit(texto_rom_6, (10,400))
     if pontos >= 7:
@@ -103,9 +105,11 @@ def textos_romanticos(pontos):
     if pontos >= 13:
         screen.blit(texto_rom_13, (380,540))
     if pontos >= 14:
-        screen.blit(texto_rom_14, (140,560))
+        screen.blit(texto_rom_14, (100,560))
+        screen.blit(texto_rom_17, (290,580))
     if pontos >= 15:
-        screen.blit(texto_rom_15, (80,600))
+        screen.blit(texto_rom_15, (350,600))
+        screen.blit(texto_rom_16,(260,640))
 
 # obstáculo do meio parte de cima
 
