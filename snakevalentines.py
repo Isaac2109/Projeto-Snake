@@ -16,7 +16,7 @@ rodando = True
 tela_inicial = True
 gamming = False
 tela_restart = False
-pontuação = 15
+pontuação = 0
 melhor_pontuação = 0
 ultima_pontuação = 0
 UP = 0
@@ -63,7 +63,7 @@ def desenhar_melhor_pontuação(melhor_pontuação):
 def textos_romanticos(pontos):
     texto_rom_1 = font_pontos.render("Esse é o nosso primeiro dia dos namorados",1,(255,0,0))
     texto_rom_2 = font_pontos.render("E é a primeira vez que o dia dos namorados faz sentido pra mim",1,(255,0,0))
-    texto_rom_3 = font_pontos.render("Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.",1,(255,0,0))
+    texto_rom_3 = font_pontos.render("Nos outros anos era só um feriado como o feriado de Tiradentes, eu não dava muita importância kkk.",1,(255,0,0))
     texto_rom_4 = font_pontos.render("Agora falando sério, eu te amo muito, muito, muito mesmo",1,(255,0,0))
     texto_rom_5 = font_pontos.render("Me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso)",1,(255,0,0))
     texto_rom_6 = font_pontos.render("Mas eu acredito que a melhor maneira de demonstrar amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda",1,(255,0,0))
@@ -234,6 +234,9 @@ while rodando:
             apple_pos = on_grid_random()
             snake.append([0,0])
             pontuação += 1
+
+        if pontuação >= 15:
+            my_direction = PARADO
 
         for c in snake:
             if collision(snake[0], c) and c is not snake[0]:
