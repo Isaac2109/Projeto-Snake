@@ -1,6 +1,5 @@
 import pygame, random
 from pygame.locals import *
-from time import sleep
 
 pygame.init()
 screen = pygame.display.set_mode((1000,700))
@@ -171,23 +170,6 @@ for o in range(30,140,10):
 for h in range(180,300,10):
     barreira.append((990,h))
 
-# Textos para minha namorada
-
-# 1 Esse é o nosso primeiro dia dos namorados
-# 2 E é a primeira vez que o dia dos namorados faz sentido pra mim
-# 3 Nos outros anos era só um feriado como o feriado de Tiradentes(não tinha importância nenhuma) kkk.
-# 4 Amor é sério... (antes no lugar de "amor" era "pô", mas depois de uma conversa nossa alterei kkkkk)
-# 5 Eu te amo muito, me desculpa porque eu não falo muito que você é linda ou que eu te amo(estou mudando isso), eu não sou muito bom com palavras
-# 6 Mas eu acredito que a melhor maneira de demonstrar o amor por uma pessoa não é simplesmente você falar eu te amo ou você é linda
-# 7 Eu acredito que o que prova realmente que você ama uma pessoa são as atitudes
-# 8 É cuidar dessa pessoa, é querer ela sempre perto de você, é querer ajudar ela quando  sempre que estiver em um momento difícil
-# 9 E eu quero muito fazer isso por você, cuidar de você, porque eu te amo.
-# 10 Hoje é o dia dos namorados e hoje fazem 49 dias que nós nos reencontramos
-# 11 E eu tenho certeza que esses já são os melhores dias da minha vida
-# 12 E eu quero que todos os dias que me restam sejam iguais a estes 49 dias ao seu lado
-# 13 Você é muito especial pra mim.
-# 14 Baixinha...
-# 15 Eu te amo, você é o amor da minha vida.
 
 clock = pygame.time.Clock()
 while rodando:
