@@ -61,7 +61,7 @@ def desenhar_melhor_pontuação(melhor_pontuação):
         screen.blit(text_reiniciar,(130,310))
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
-        screen.blit(text_melhor_pontuacao, (440,5))
+        screen.blit(text_melhor_pontuacao, (400,5))
 
 for t in range(270,220,-10):
     barreira.append((450,t))
@@ -113,7 +113,7 @@ while rodando:
         my_direction = LEFT
         snake = [[300, 300], [310, 300],[320,300]]
         screen.fill((0,0,0))
-        screen.blit(text_inicial,(130,250))
+        screen.blit(text_inicial,(100,250))
         pygame.display.update()
 
         for event in pygame.event.get():
