@@ -51,14 +51,14 @@ def desenhar_pontuação(pontos):
     
 def desenhar_ultima_pontuação(ultima_pontuação):
     text_sua_pontuacao = font_text.render(f"Você fez {ultima_pontuação} pontos",1 ,(0, 200, 255))
-    screen.blit(text_sua_pontuacao, (195,230))
+    screen.blit(text_sua_pontuacao, (185,230))
 
 def desenhar_melhor_pontuação(melhor_pontuação):
     if tela_restart:
         text_melhor_pontuacao = font_text.render(f"Sua melhor pontuação foi {melhor_pontuação}",1 ,(0, 200, 255))
-        screen.blit(text_melhor_pontuacao, (150,270))
+        screen.blit(text_melhor_pontuacao, (130,270))
         text_reiniciar = font_text.render("Para reiniciar pressione espaço",1,(0,200,255))
-        screen.blit(text_reiniciar,(130,310))
+        screen.blit(text_reiniciar,(110,310))
     if gamming:
         text_melhor_pontuacao = font_pontos.render(f"Melhor Pontuação: {melhor_pontuação}",1 ,(0, 200, 255))
         screen.blit(text_melhor_pontuacao, (400,5))
@@ -212,7 +212,7 @@ while rodando:
         snake = [[300, 300], [310, 300],[320,300]]
         apple_pos = on_grid_random()
         screen.fill((0,0,0))
-        screen.blit(text_perdeu,(220,190))
+        screen.blit(text_perdeu,(210,190))
         desenhar_ultima_pontuação(ultima_pontuação)
         desenhar_melhor_pontuação(melhor_pontuação)
         pygame.display.update()
