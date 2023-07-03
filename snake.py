@@ -1,6 +1,5 @@
 import pygame, random
 from pygame.locals import *
-from time import sleep
 
 pygame.init()
 screen = pygame.display.set_mode((600,600))
