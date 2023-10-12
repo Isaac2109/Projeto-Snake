@@ -29,7 +29,7 @@ snake_skin = pygame.Surface((10,10))
 snake_skin.fill((100,255,100),)
 barreira = []
 bloco = pygame.Surface((10,10))
-bloco.fill((72,185,219))
+bloco.fill((247, 91, 7))
 
 def on_grid_random():
     x = random.randint(10,580) // 10 * 10
@@ -195,7 +195,7 @@ while rodando:
             snake[0] = (snake[0][0], snake[0][1] + 570)
             my_direction = UP
             
-        screen.fill((3,6,82))
+        screen.fill((228, 252, 8))
         screen.blit(apple, apple_pos)
         for pos in snake:
             screen.blit(snake_skin,pos)
